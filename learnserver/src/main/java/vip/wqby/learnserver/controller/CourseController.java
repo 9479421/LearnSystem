@@ -1,0 +1,12 @@
+package vip.wqby.learnserver.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CourseController {
+    @RequestMapping("/getCourseList")
+    public String getCourseList(){
+        return "草拟吗";
+    }
+}

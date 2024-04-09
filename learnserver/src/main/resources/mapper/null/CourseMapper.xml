@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.wqby.learnserver.mapper.auto.CourseMapper">
+    <insert id="addCourse" parameterType="Course" keyProperty="courseId" useGeneratedKeys="true">
+        insert into course (name,coverImg,teacher,intro,isPutAway) values (#{name},#{coverImg},#{teacher},#{intro},true)
+    </insert>
+</mapper>

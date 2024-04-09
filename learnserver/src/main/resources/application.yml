@@ -1,0 +1,41 @@
+server:
+  port: 9090
+spring:
+  #使用druid连接池来连接数据库
+  datasource:
+    #数据库连接路径
+    url: jdbc:mysql://localhost:3306/learnsys?useUnicode=true&useSSL=false&characterEncoding=utf-8&serverTimezone=UTC
+    #数据库驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #数据库用户名
+    username: wangquanbaye
+    #数据库密码
+    password: BAye6666
+  #配置上传文件大小
+  servlet:
+    multipart:
+      max-file-size: 3000000MB
+      max-request-size: 3000000MB
+storage: #使用腾讯云对象存储
+  source: tenCloud
+  secretId: AKIDaz81cw0nJaaIjunQmytXtynLccMozsWt
+  secretKey: 7xVIr9AuNZVAZgW5OQBftpVu2tTnqc7L
+  region: ap-nanjing
+  bucketName: learnsys-1304194722
+  defaultCoverImg: https://learnsys-1304194722.cos.ap-nanjing.myqcloud.com/defaultCover.png
+  defaultAvatarImg: https://learnsys-1304194722.cos.ap-nanjing.myqcloud.com/defaultAvatar.png
+  baseUrl: https://learnsys-1304194722.cos.ap-nanjing.myqcloud.com
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
+  type-aliases-package: vip.wqby.learnserver.model.auto
