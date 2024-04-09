@@ -16,7 +16,7 @@ public class noteConsumer extends Thread {
 
     public static void sendNote(String templateId, String[] args, String phone) {
         try {
-            Credential cred = new Credential("AKIDaz81cw0nJaaIjunQmytXtynLccMozsWt", "7xVIr9AuNZVAZgW5OQBftpVu2tTnqc7L");
+            Credential cred = new Credential("", "");
             HttpProfile httpProfile = new HttpProfile();
             httpProfile.setReqMethod("POST");
             httpProfile.setConnTimeout(60);
